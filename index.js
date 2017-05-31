@@ -24,6 +24,7 @@ app.use(express.static("./public"));
 
 app.use('/', hotelRouter);
 // app.use('/hotels', hotelRouter);
+app.use('/hotels/new', hotelRouter);
 
 // app.use((err, req, res, next) => {
 //   console.error(err.stack, next);

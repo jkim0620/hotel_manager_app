@@ -15,18 +15,20 @@ controller.index = (req, res) => {
   });
 }
 
-// controller.show = (req, res) => {
-//   Hotel
-//   .findByID(req.params.id)
-//   .then((students_data) => {
-//     res.render("houses/houses_show.ejs", {
-//       id: req.params.id,
-//       students: students_data
-//     });
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
-// }
+controller.indexNew = (req, res) => {
+  res.render("hotels/new.ejs");
+}
+
+controller.create = (req, res) => {
+  Hotel
+  .save(req.body.hotel)
+  .then(() => {
+    res.redirect("/");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+}
+
 
 module.exports = controller;
